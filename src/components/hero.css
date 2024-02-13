@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-white {
+  background-image: url("../graffiti.jpg");
+  background-repeat: no-repeat;
+  background-size:cover; 
+  background-position: center;
+}
+
+.image-logo{
+    position: absolute;
+    right: 50px;
+    bottom: 310px;
+    z-index: 100;
+    width: 330px;
+    height: 200px;
+}
