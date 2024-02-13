@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.image-logo-footer{
+    width: 120px;
+    height: 60px !important;
+}

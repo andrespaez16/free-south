@@ -15,5 +15,5 @@
     bottom: 310px;
     z-index: 100;
     width: 330px;
-    height: 200px;
+    height: 200px !important;
 }
