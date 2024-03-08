@@ -6,7 +6,7 @@ import logoFree from "../logofree.png";
 const Hero = () => {
   return (
     <div className="text-white" id="home">
-      <div className="max-w-[700px] max-h-[550px] mt-[0px] w-full h-screen mx-auto text-center flex flex-col justify-center">
+      <div className="max-w-[700px] max-h-[850px] mt-[0px] w-full h-screen mx-auto text-center flex flex-col justify-center">
         {/* <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6">
            test
         </h1>
@@ -33,7 +33,7 @@ test3
         </button> */}
       </div>
       <img
-                        className="h-16 image-logo"
+                        className="h-16 image-logo z-50"
                         src={logoFree}
                         alt="Your Company"
                       />

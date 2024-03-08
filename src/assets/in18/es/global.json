@@ -1,0 +1,87 @@
+{
+    "home": {
+      "title": "Permítanos ofrecerle",
+      "subtitle": "Rápidez,",
+      "text_informative": "CUCHITO CORP. EL MEJOR SERVICIO DE TRANSPORTE PROFESIONAL EN TODA LA FLORIDA.",
+      "button_text": "Consigue una cotización",
+      "private":"Privacidad",
+      "safe":"Seguridad",
+      "confortable":"Comodidad",
+      "trips":"en sus viajes."
+    },
+    "nav": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "fleet": "Flota",
+      "about": "Contactanos"
+    },
+    "services": {
+      "title":"Servicios",
+      "clients_count": "Cliente felices",
+      "experiencie_count": "Años de experiencia",
+      "travel_count": "Viajes realizados",
+      "airport_trasnfer": "SERVICIO DE AEROPUERTO",
+      "title_airport_trasnfer": "Manejo de privacidad y seguridad",
+      "text_airport_trasnfer": "Muchos clientes nos eligen constantemente como el mejor proveedor de traslados para el Aeropuerto Internacional de Miami. Como un servicio de transporte terrestre de lujo para negocios y vacaciones.",
+      "button_text_airport": "Get a Quote",
+      "black_car": "SERVICIO DE BLACK CAR",
+      "title_black_car": "Discreción total en tu recorrido",
+      "text_black_car": "El mejor servicio de Black Car en Miami brinda transporte a clientes exclusivos que desean el mejor transporte privado y seguro para todas sus necesidades. Nuestro equipo de conductores se asegurará de que llegue seguro y cómodo a su destino deseado.",
+      "button_text_black_car": "Get a Quote",
+      "group_car": "GRUPOS Y TRANSPORTE CORPORATIVO",
+      "title_group_car": "Comodidad y seguridad para tu grupo",
+      "text_group_car": "Máximo nivel de profesionalismo y cortesía. Nuestro equipo trabajará en estrecha colaboración con usted o su coordinador de eventos para garantizar que el transporte de su grupo supere sus expectativas.",
+      "button_text_group_car": "Get a Quote",
+      "disney_car": "SERVICIO TURÍSTICO DE DISNEY WORLD",
+      "title_disney_car": "El mejor servicio para tu familia.",
+      "text_disney_car": "Sabemos que nuestros clientes desean transportar a su familia de manera segura y cómoda en sus vacaciones a Disney World Tour, nuestro equipo estará encantado de brindarle el servicio a usted y su familia.",
+      "button_text_disney_car": "Get a Quote",
+      "key_car": "SERVICIO DE TRANPORTE A LOS CAYOS DE LA FLORIDA",
+      "title_key_car": "Nosotras conocemos las mejores playas de florida",
+      "text_key_car": "Sabemos que Florida tiene los mejores cayos de los Estados Unidos y estamos dispuestos a transportarte de forma segura, cómoda y privada con tu pareja o familia, para que disfrutes de las hermosas playas que tiene el estado.",
+      "button_text_key_car": "Get a Quote"
+    },
+    "fleet": {
+      "tesla_car": "TESLA MODEL 3",
+      "suitcase_tesla_car": "2",
+      "passengers_tesla_car": "1-3",
+      "text_tesla_car": "El Tesla Model 3 es uno de los mejores vehículos eléctricos prácticos, de alta tecnología y con un gran rendimiento y autonomía. El estilo discreto esconde una transmisión eléctrica sofisticada y un interior ultramoderno dominado por una enorme pantalla táctil.",
+      "suv_car": "CHEVROLET SUBURBAN",
+      "suitcase_suv_car": "4",
+      "passengers_suv_car": "4-6",
+      "text_suv_car": "La Chevrolet Suburban 2023 lleva la antorcha de uno de los modelos más antiguos de la carretera. La Suburban es una de las camionetas con más tecnología, comodidad y seguridad, siendo una de las pocas en el segmento en contar con la tecnología de conducción autónoma de nivel 2 de GM, Super Cruise.",
+      "scalade_car": "CADILLAC ESCALADE",
+      "suitcase_scalade_car": "4",
+      "passengers_scalade_car": "4-6",
+      "text_scalade_cars": "El Cadilac Escalade es uno de los SUV más lujosos del segmento, por lo que es uno de los SUV preferidos por los clientes que quieren viajar a otro nivel.",
+      "sprinter_car": "MERCEDES-BENZ SPRINTER",
+      "suitcase_sprinter_car": "14",
+      "passengers_sprinter_car": "8-14",
+      "text_sprinter_car":"La Sprinter es una de las mejores camionetas grandes y refinadas que tiene el segmento, cuenta con la última tecnología, comodidad y clase que un viaje en Miami puede exigir.",
+      "title_fleet": "Flota",
+      "passenger":"PASAJERO: ",
+      "suitcases":"MALETAS: ",
+      "pets":"PERMITIMOS MASCOTAS :"
+    },
+    "contact": {
+      "title": "Contactanos",
+      "text_contact": "¿Quieres que te ayudemos a transportarte?",
+      "text_subtitle": "Solo escribe tu email y nos pondremos en contacto contigo",
+      "place_holder": "Ingresa tu correo",
+      "button": "Notificarme",
+      "input_text": "Nos preocupamos por la protección de sus datos. Lea nuestro",
+      "input_subtitles": "Política de privacidad."
+    },
+    "footer":{
+      "text":"Nosotros somos una empresa que lleva 9 años en el mercado del transporte especial  de lujo en miami y la Florida, que se caracteriza por sus estandares da calidad y cumplimiento a la hora de prestar un servicio a nuestros clientes.",
+      "solutions_one":"Transporte especial",
+      "solutions_two":"Coorporativo",
+      "solutions_tree":"Familiar",
+      "solutions_four":"Privado",
+      "exp_company":"9 años de experiencia",
+      "solutions":"Soluciones",
+      "support":"Soporte",
+      "company":"Empresa"
+    }
+  }
+  

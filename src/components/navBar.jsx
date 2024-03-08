@@ -28,7 +28,7 @@ function classNames(...classes) {
 function Navbar() {
   return (
     <>
-      <div className="min-h-full">
+      <div className="w-full fixed top-0 left-0 z-[100]">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
             <>

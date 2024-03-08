@@ -20,7 +20,7 @@ const Newsletter = () => {
                 type="email"
                 placeholder="Escribe tu email"
               />
-              <button className="bg-[#00df9a] text-black rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3">
+              <button className="bg-black text-[#00EA23] rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3">
                 <a
                   href="mailto:cuchitocorpgerencia@hotmail.com?subject=Hello i Want to Get a Quote!!!&body=Hello cuchitocorp I want a quote for the service:"
                   className=""

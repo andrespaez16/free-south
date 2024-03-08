@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .text-white-map{
+  background-image: url("../assets/map.png");
+  background-repeat: no-repeat;
+  background-size:cover; 
+  background-position: center;
+} */
