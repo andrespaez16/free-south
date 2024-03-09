@@ -22,17 +22,13 @@ const Newsletter = () => {
               />
               <button className="bg-black text-[#00EA23] rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3">
                 <a
-                  href="mailto:cuchitocorpgerencia@hotmail.com?subject=Hello i Want to Get a Quote!!!&body=Hello cuchitocorp I want a quote for the service:"
+                  href="mailto:freesouthmedellin@gmail.com?subject=Hola necesito hacer una cotizacion:"
                   className=""
                 >
                   Contactanos
                 </a>
               </button>
             </div>
-            <p>
-              t3
-              <span className="text-[#00df9a]"> t4</span>
-            </p>
           </div>
         </div>
       </div>

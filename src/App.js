@@ -12,11 +12,11 @@ function App() {
       <Navbar />
       <Hero/>
       <Carrusel/>
-      <Analytics />
+      <Analytics  />
       <Newsletter />
       <Footer />
       <button className="w-[100px] h-[100px] border-radius: [50px] what">
-        <a className='hide-type' href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+        <a className='hide-type'  target="_blank" href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!">
           what
         </a>
       </button>

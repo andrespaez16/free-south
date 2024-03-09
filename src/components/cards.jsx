@@ -5,12 +5,9 @@ import privateCar from "../assets/coleccion.jpg";
 import disney from "../assets/oversize2.jpg";
 import keys from "../assets/accesorios.webp";
 import CountUp from "react-countup";
-import { FaMapMarked } from "react-icons/fa";
 import "./analytics.css";
-// import { useTranslation } from "react-i18next";
 
 const Analytics = () => {
-  //   const [t, i18n] = useTranslation("global");
   return (
     <div className="w-full bg-white pt-3 px-4 text-white-map" id="Analytics">
       <h1
@@ -19,7 +16,7 @@ const Analytics = () => {
        text-[#00EA23]
       "
       >
-        Nuestros clientes
+        Nuestros Logros
       </h1>
       <div
         className="mx-auto grid md:grid-cols-3 mb-[50px]"
@@ -43,7 +40,7 @@ const Analytics = () => {
             <FaMapMarked />
           </span> */}
           <span className="md:text-4xl sm:text-3xl text-center text-2xl font-bold  mb-6">
-            <CountUp end={9} duration={8} />
+            <CountUp end={7} duration={8} />
           </span>
           <h1 className="md:text-4xl sm:text-3xl text-center text-2xl font-bold  mb-6 text-[#00EA23]">
             Años de experiencia en el mercado
@@ -68,7 +65,7 @@ const Analytics = () => {
         data-aos-duration="1000"
       >
         <img
-          className="w-[550px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
+          className="w-[550px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={airport}
           alt="/"
         />
@@ -81,7 +78,7 @@ const Analytics = () => {
             tienda.
           </p>
           <button className="bg-black text-[#00EA23] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
-            <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+            <a  href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!">
               Descarga catalogo
             </a>
           </button>
@@ -105,13 +102,13 @@ const Analytics = () => {
             calidad
           </p>
           <button className="bg-black text-[#00EA23] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
-            <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+            <a href="https://drive.google.com/drive/folders/1s5kuSPFv4j8IPHv2os_X42fO0ry5zhT0">
               Descarga catalogo
             </a>
           </button>
         </div>
         <img
-          className="w-[530px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
+          className="w-[530px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={privateCar}
           alt="/"
         />
@@ -123,7 +120,7 @@ const Analytics = () => {
         data-aos-duration="1000"
       >
         <img
-          className="w-[550px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
+          className="w-[550px]  mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={group}
           alt="/"
         />
@@ -137,7 +134,7 @@ const Analytics = () => {
             Las marcas reconocidas de gafas en el mercado las encuentras aqui
           </p>
           <button className="bg-black text-[#00EA23]  w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
-            <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+            <a href="https://drive.google.com/drive/folders/1-RRHu6qCf7Bw1-9kAIRhCvr_z-DbVuSQ">
               Descarga catalogo
             </a>
           </button>
@@ -161,13 +158,13 @@ const Analytics = () => {
             famosas del mundo en la mejor calidad disponible del mercado
           </p>
           <button className="bg-black text-[#00EA23] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
-            <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+            <a  href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!">
               Descarga catalogo
             </a>
           </button>
         </div>
         <img
-          className="w-[530px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
+          className="w-[530px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={disney}
           alt="/"
         />
@@ -179,7 +176,7 @@ const Analytics = () => {
         data-aos-duration="1000"
       >
         <img
-          className="w-[550px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
+          className="w-[550px] mx-auto my-4 rounded-lg sm:h-[250px] md:h-[335px]"
           src={keys}
           alt="/"
         />
@@ -195,7 +192,7 @@ const Analytics = () => {
             famosas del mundo
           </p>
           <button className="bg-black text-[#00EA23] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
-            <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+            <a href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!">
               Descarga catalogo
             </a>
           </button>
