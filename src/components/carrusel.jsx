@@ -98,9 +98,9 @@ const Carrusel = () => {
                   <span className="text-[#00df9a] ml-5 flex-start ">
                     {/* {item.passanger} */}
                   </span>
-                  {/* <span className="mt-[3px] ml-2">
+                  <span className="mt-[3px] ml-2">
                     <FaUserAlt />
-                  </span> */}
+                  </span>
                 </p>
                 <p className="text-[#00df9a] font-bold flex">
                 {/* {t("fleet.suitcases")} */}
