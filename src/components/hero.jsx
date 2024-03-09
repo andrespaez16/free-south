@@ -32,11 +32,7 @@ test3
           </a>
         </button> */}
       </div>
-      <img
-                        className="h-16 image-logo z-50"
-                        src={logoFree}
-                        alt="Your Company"
-                      />
+      <img className="h-16 image-logo z-50" src={logoFree} alt="Your Company" />
     </div>
   );
 };

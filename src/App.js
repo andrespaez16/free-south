@@ -15,6 +15,11 @@ function App() {
       <Analytics />
       <Newsletter />
       <Footer />
+      <button className="w-[100px] h-[100px] border-radius: [50px] what">
+        <a className='hide-type' href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
+          what
+        </a>
+      </button>
     </>
   );
 }

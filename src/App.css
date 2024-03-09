@@ -26,3 +26,18 @@ swiper {
   height: 100%;
   object-fit: cover;
 }
+
+.what{
+  
+  background-image: url("./assets/whatsapp_logo_icon_229310.png");
+  background-repeat: no-repeat;
+  background-size:cover; 
+  background-position: center;
+  position: fixed;
+  top: 46em;
+  right: 1em;
+  z-index: 99999;
+}
+.hide-type{
+  color: transparent;
+}
