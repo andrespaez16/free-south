@@ -2,7 +2,7 @@ import React from "react";
 import group from "../assets/gafas-stock.jpg";
 import airport from "../assets/gorras.jpg";
 import privateCar from "../assets/coleccion.jpg";
-import disney from "../assets/camisetas.jpg";
+import disney from "../assets/oversize2.jpg";
 import keys from "../assets/accesorios.webp";
 import CountUp from "react-countup";
 import { FaMapMarked } from "react-icons/fa";
@@ -68,7 +68,7 @@ const Analytics = () => {
         data-aos-duration="1000"
       >
         <img
-          className="w-[550px] h-[300px] mx-auto my-4 rounded-lg"
+          className="w-[550px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={airport}
           alt="/"
         />
@@ -111,7 +111,7 @@ const Analytics = () => {
           </button>
         </div>
         <img
-          className="w-[530px] h-[300px] mx-auto my-4 rounded-lg"
+          className="w-[530px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={privateCar}
           alt="/"
         />
@@ -123,20 +123,22 @@ const Analytics = () => {
         data-aos-duration="1000"
       >
         <img
-          className="w-[550px] h-[350px] mx-auto my-4 rounded-lg"
+          className="w-[550px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={group}
           alt="/"
         />
         <div className="flex flex-col justify-center">
-          <p className="text-[#00df9a] font-bold ">
-          </p>
+          <p className="text-[#00df9a] font-bold "></p>
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold  text-[#00EA23]  py-2">
-    Gafas
+            Gafas
           </h1>
-          <p>            Las marcas reconocidas de gafas en el mercado las encuentras aqui</p>
+          <p>
+            {" "}
+            Las marcas reconocidas de gafas en el mercado las encuentras aqui
+          </p>
           <button className="bg-black text-[#00EA23]  w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
             <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
-            Descarga catalogo
+              Descarga catalogo
             </a>
           </button>
         </div>
@@ -152,17 +154,20 @@ const Analytics = () => {
             {/* {t("services.disney_car")} */}
           </p>
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2 text-[#00EA23]">
-          Camisetas OverSize
+            Camisetas OverSize
           </h1>
-          <p>Aqui encuentras las camisetas de las marcas mas reconocidas y famosas del mundo en la mejor calidad disponible del mercado</p>
+          <p>
+            Aqui encuentras las camisetas de las marcas mas reconocidas y
+            famosas del mundo en la mejor calidad disponible del mercado
+          </p>
           <button className="bg-black text-[#00EA23] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
             <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
-            Descarga catalogo
+              Descarga catalogo
             </a>
           </button>
         </div>
         <img
-          className="w-[530px] h-[300px]  mx-auto my-4 rounded-lg"
+          className="w-[530px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={disney}
           alt="/"
         />
@@ -174,7 +179,7 @@ const Analytics = () => {
         data-aos-duration="1000"
       >
         <img
-          className="w-[550px] h-[300px] mx-auto my-4 rounded-lg"
+          className="w-[550px] h-[335px] mx-auto my-4 rounded-lg sm: h-[250px] md:h-[335px]"
           src={keys}
           alt="/"
         />
@@ -183,12 +188,15 @@ const Analytics = () => {
             {/* {t("services.key_car")} */}
           </p>
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2 text-[#00EA23]">
-    Accesorios
+            Accesorios
           </h1>
-          <p>Te ofrecemos todos los accesorios de las marcas en tendencia y famosas del mundo</p>
+          <p>
+            Te ofrecemos todos los accesorios de las marcas en tendencia y
+            famosas del mundo
+          </p>
           <button className="bg-black text-[#00EA23] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
             <a href="https://api.whatsapp.com/send?phone=13473197413&text=Hello I want to make a reservation!!">
-            Descarga catalogo
+              Descarga catalogo
             </a>
           </button>
         </div>
