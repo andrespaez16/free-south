@@ -16,7 +16,7 @@ import { Navigation } from "swiper/modules";
 const navigation = [
   { name: "Home", href: "#", current: false },
   { name: "Productos", href: "#", current: false },
-  { name: "Equipo", href: "#", current: false },
+  { name: "Sale o promos", href: "#", current: false },
   { name: "Nosotros", href: "#", current: false },
   { name: "Contactanos", href: "#", current: false },
 ];

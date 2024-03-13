@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Newsletter from './components/Newsletter';
 import Analytics from './components/cards';
 import Carrusel from './components/carrusel';
+import "../src/App.css"
 
 function App() {
   return (

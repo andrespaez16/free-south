@@ -11,10 +11,14 @@ import logoFree from "../logofree.png";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300">
+    <div className="mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-[#1f2937] text-[white]">
       <div>
         {" "}
-        <img className="h-16 image-logo-footer" src={logoFree} alt="Your Company" />
+        <img
+          className="h-16 image-logo-footer"
+          src={logoFree}
+          alt="Your Company"
+        />
         {/* <h1 className="w-full text-3xl font-bold text-[#00df9a]">
           SOMOS FREE SOUTH
         </h1> */}
@@ -32,16 +36,15 @@ const Footer = () => {
       </div>
       <div className="lg:col-span-2 flex grid md:grid-cols-3 justify-between mt-6">
         <div>
-          <h6 className="font-medium text-gray-400">Lo que ofrecemos</h6>
+          <h6 className="font-medium text-[white] font-bold">Lo que ofrecemos</h6>
           <ul>
             <li className="py-2 text-sm">Ropa</li>
             <li className="py-2 text-sm">Accesorios</li>
-            <li className="py-2 text-sm">Venta al Detal.</li>
-            <li className="py-2 text-sm">Venta al por Mayor.</li>
+            <li className="py-2 text-sm">Calzado</li>
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400">Contacto</h6>
+          <h6 className="font-mediumtext-[white] font-bold">Contacto</h6>
           <ul>
             <li className="py-2 text-sm">WhatsApp:</li>
             <li className="py-2 text-sm">3006406246</li>
@@ -51,14 +54,14 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h6 className="font-medium text-gray-400">Empresa</h6>
+          <h6 className="font-medium text-[white] font-bold">Empresa</h6>
           <ul>
             <li className="py-2 text-sm">7 años de experiencia.</li>
-            <li className="py-2 text-sm">Itagui-San Jose</li>
-            <li className="py-2 text-sm">Calle 36A#40-51</li>
+            <li className="py-2 text-sm">Itagui - San Jose</li>
             <li className="py-2 text-sm">
-              Email:cuchitocorpgerencia@hotmail.com
+              Calle 36A#40-51 Barrio La Independencia
             </li>
+            <li className="py-2 text-sm">freesouthmedellin@gmail.com</li>
           </ul>
         </div>
       </div>

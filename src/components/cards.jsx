@@ -29,7 +29,7 @@ const Analytics = () => {
             <FaMapMarked />
           </span> */}
           <span className="md:text-4xl sm:text-3xl text-center text-2xl font-bold  mb-6 ">
-            <CountUp end={5300} duration={7} />
+            <CountUp end={1500} duration={7} />
           </span>
           <h1 className="md:text-4xl sm:text-3xl text-center text-2xl font-bold  mb-6 text-[#00EA23]">
             Clientes satifechos
@@ -40,7 +40,7 @@ const Analytics = () => {
             <FaMapMarked />
           </span> */}
           <span className="md:text-4xl sm:text-3xl text-center text-2xl font-bold  mb-6">
-            <CountUp end={7} duration={8} />
+            <CountUp end={8} duration={8} />
           </span>
           <h1 className="md:text-4xl sm:text-3xl text-center text-2xl font-bold  mb-6 text-[#00EA23]">
             Años de experiencia en el mercado
