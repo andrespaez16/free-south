@@ -59,7 +59,7 @@ const Carrusel = () => {
       >
         {data.map((item, key) => (
           <SwiperSlide>
-            <div className="max-w-[450px] ">
+            <div className="w-[250px]">
               <img className={item.class} src={item.image} />
             </div>
           </SwiperSlide>
