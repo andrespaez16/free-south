@@ -52,7 +52,7 @@ const Analytics = () => {
           />
           <div className="flex flex-col justify-center">
             <button className="bg-black text-[#00EA23] w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-              <a href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!">
+              <a href="https://drive.google.com/drive/folders/1JOXCJ-jKr78m0_wNATmxQhE5cG3xM4NO">
                 Accesorios
               </a>
             </button>
@@ -73,7 +73,7 @@ const Analytics = () => {
             <p className="text-[#00df9a] font-bold "></p>
 
             <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-              <a href="https://drive.google.com/drive/folders/1-RRHu6qCf7Bw1-9kAIRhCvr_z-DbVuSQ">
+              <a href="https://drive.google.com/drive/folders/1HJ3Glss_Iy3egPOeSvU27wgi5XNYj0T7">
                 Ropa
               </a>
             </button>
@@ -94,7 +94,7 @@ const Analytics = () => {
             <p className="text-[#00df9a] font-bold "></p>
 
             <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-              <a href="https://drive.google.com/drive/folders/1-RRHu6qCf7Bw1-9kAIRhCvr_z-DbVuSQ">
+              <a href="https://drive.google.com/drive/folders/1TxOpUw46f71f9T5hxAXBzhAdeXQQ9O60">
                 Calzado
               </a>
             </button>
