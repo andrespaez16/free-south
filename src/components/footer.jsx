@@ -11,7 +11,7 @@ import logoFree from "../logofree.png";
 
 const Footer = () => {
   return (
-    <div className="mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-[#1f2937] text-[white]">
+    <div className="mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 bg-[#040404] text-[white]">
       <div>
         {" "}
         <img

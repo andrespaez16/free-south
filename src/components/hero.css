@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .text-white {
-  background-image: url("../graffiti.jpg");
+  background-image: url("../homemovil.png");
   background-repeat: no-repeat;
   background-size:cover; 
   background-position: center;

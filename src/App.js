@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Newsletter from './components/Newsletter';
 import Analytics from './components/cards';
 import Carrusel from './components/carrusel';
+import Info from './components/info';
 import "../src/App.css"
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
     <>
       <Navbar />
       <Hero/>
-      <Carrusel/>
+      <Info/>
       <Analytics  />
+      <Carrusel/>
       <Newsletter />
       <Footer />
       <button className="w-[100px] h-[100px] border-radius: [50px] what">
