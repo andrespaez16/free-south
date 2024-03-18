@@ -1,7 +1,7 @@
 import React from "react";
 // import Typed from "react-typed";
 import "./hero.css";
-import logoFree from "../logofree.png";
+
 
 const Hero = () => {
   return (

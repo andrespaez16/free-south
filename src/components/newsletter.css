@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .text-white-new{
-  background-image: url("../itagui44.jpg");
+  background-image: url("../formulario.png");
   background-repeat: no-repeat;
   background-size:cover; 
   background-position: center;

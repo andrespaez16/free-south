@@ -7,7 +7,7 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa";
 import "./hero.css";
-import logoFree from "../logofree.png";
+import logoFree from "../HomeWhite.png";
 
 const Footer = () => {
   return (

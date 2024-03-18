@@ -18,7 +18,7 @@ function App() {
       <Carrusel/>
       <Newsletter />
       <Footer />
-      <button className="w-[100px] h-[100px] border-radius: [50px] what">
+      <button className="w-[70px] h-[70px] border-radius: [50px] what">
         <a className='hide-type'  target="_blank" href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!">
           what
         </a>

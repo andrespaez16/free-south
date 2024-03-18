@@ -1,8 +1,6 @@
 import React from "react";
 import group from "../assets/ropa.png";
 import airport from "../assets/accesorios.png";
-import privateCar from "../assets/coleccion.jpg";
-import disney from "../assets/oversize2.jpg";
 import keys from "../assets/calzado.png";
 import CountUp from "react-countup";
 import "./analytics.css";

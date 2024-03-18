@@ -34,7 +34,7 @@ swiper {
   background-size:cover; 
   background-position: center;
   position: fixed;
-  top: 46em;
+bottom: 2em;
   right: 1em;
   z-index: 99999;
 }
