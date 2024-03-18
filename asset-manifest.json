@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/free-south/static/css/main.be07d93b.css",
-    "main.js": "/free-south/static/js/main.e78ca6e1.js",
+    "main.css": "/free-south/static/css/main.b369f2ed.css",
+    "main.js": "/free-south/static/js/main.0a9e7d13.js",
     "static/js/592.acb7be24.chunk.js": "/free-south/static/js/592.acb7be24.chunk.js",
-    "static/media/itagui44.jpg": "/free-south/static/media/itagui44.6dd07601df64379354c7.jpg",
-    "static/media/gorras.jpg": "/free-south/static/media/gorras.245cef3bb7a8eadcd182.jpg",
-    "static/media/graffiti.jpg": "/free-south/static/media/graffiti.f70fc55ea62eefd08640.jpg",
-    "static/media/oversize2.jpg": "/free-south/static/media/oversize2.b18bceb779b9313c6ded.jpg",
-    "static/media/logofree.png": "/free-south/static/media/logofree.fdad7f76eca3c1beb2f4.png",
-    "static/media/accesorios.webp": "/free-south/static/media/accesorios.49c95a77305a4feadda6.webp",
-    "static/media/coleccion.jpg": "/free-south/static/media/coleccion.057d5c19c2b5fe0093ad.jpg",
+    "static/media/homemovil.png": "/free-south/static/media/homemovil.b5dc4db9a8e54c078088.png",
+    "static/media/calzado.png": "/free-south/static/media/calzado.d207bdd5a105a1bd6138.png",
+    "static/media/ropa.png": "/free-south/static/media/ropa.e948f47e231d93776b5b.png",
+    "static/media/accesorios.png": "/free-south/static/media/accesorios.36ad1ffd688ef0495317.png",
+    "static/media/formulario.png": "/free-south/static/media/formulario.49bb13ebade0780d75a2.png",
+    "static/media/HomeWhite.png": "/free-south/static/media/HomeWhite.2e01359812b500f22876.png",
     "static/media/whatsapp_logo_icon_229310.png": "/free-south/static/media/whatsapp_logo_icon_229310.ade89aaf1201d61e3f09.png",
     "static/media/gucci5.jpg": "/free-south/static/media/gucci5.3af190bd105e2bf3c6c0.jpg",
     "static/media/palm5.jpg": "/free-south/static/media/palm5.59cfc6549cdac121398b.jpg",
@@ -17,12 +16,12 @@
     "static/media/prada5.jpg": "/free-south/static/media/prada5.9dc7026d2747ee98a829.jpg",
     "static/media/amiri5.jpg": "/free-south/static/media/amiri5.7047860e503add86b0ee.jpg",
     "index.html": "/free-south/index.html",
-    "main.be07d93b.css.map": "/free-south/static/css/main.be07d93b.css.map",
-    "main.e78ca6e1.js.map": "/free-south/static/js/main.e78ca6e1.js.map",
+    "main.b369f2ed.css.map": "/free-south/static/css/main.b369f2ed.css.map",
+    "main.0a9e7d13.js.map": "/free-south/static/js/main.0a9e7d13.js.map",
     "592.acb7be24.chunk.js.map": "/free-south/static/js/592.acb7be24.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be07d93b.css",
-    "static/js/main.e78ca6e1.js"
+    "static/css/main.b369f2ed.css",
+    "static/js/main.0a9e7d13.js"
   ]
 }
