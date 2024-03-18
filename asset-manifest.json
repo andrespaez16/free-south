@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/free-south/static/css/main.b369f2ed.css",
-    "main.js": "/free-south/static/js/main.0a9e7d13.js",
+    "main.js": "/free-south/static/js/main.2977fb23.js",
     "static/js/592.acb7be24.chunk.js": "/free-south/static/js/592.acb7be24.chunk.js",
     "static/media/homemovil.png": "/free-south/static/media/homemovil.b5dc4db9a8e54c078088.png",
     "static/media/calzado.png": "/free-south/static/media/calzado.d207bdd5a105a1bd6138.png",
@@ -17,11 +17,11 @@
     "static/media/amiri5.jpg": "/free-south/static/media/amiri5.7047860e503add86b0ee.jpg",
     "index.html": "/free-south/index.html",
     "main.b369f2ed.css.map": "/free-south/static/css/main.b369f2ed.css.map",
-    "main.0a9e7d13.js.map": "/free-south/static/js/main.0a9e7d13.js.map",
+    "main.2977fb23.js.map": "/free-south/static/js/main.2977fb23.js.map",
     "592.acb7be24.chunk.js.map": "/free-south/static/js/592.acb7be24.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b369f2ed.css",
-    "static/js/main.0a9e7d13.js"
+    "static/js/main.2977fb23.js"
   ]
 }
