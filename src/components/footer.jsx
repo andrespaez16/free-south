@@ -19,14 +19,14 @@ const Footer = () => {
         {/* <h1 className="w-full text-3xl font-bold text-[#00df9a]">
           SOMOS FREE SOUTH
         </h1> */}
-        <p className="py-4">
-          POLÍTICAS Y ENVÍOS CAMBIOS, DEVOLUCIONES Y GARANTÍAS
-        </p>
         <div className="flex justify-between md:w-[75%] my-6 text-[#00EA23]">
           <FaFacebookSquare size={30} />
           <FaInstagram size={30} />
           <FaTiktok size={30} />
         </div>
+        <p className="py-4 text-[white] ">
+          POLÍTICAS Y ENVÍOS CAMBIOS, DEVOLUCIONES Y GARANTÍAS
+        </p>
       </div>
       <div className="lg:col-span-2 flex grid md:grid-cols-3 justify-between mt-6">
         <div>
