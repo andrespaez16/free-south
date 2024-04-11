@@ -1,5 +1,4 @@
 {
-  "homepage": "https://andrespaez16.github.io/free-south/",
   "name": "south-app",
   "version": "0.1.0",
   "private": true,
@@ -24,8 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "react-scripts build && docker build -t freesouth .",
+    "deploy": "docker run -d --name freesouth --restart always -p 80:3000 freesouth"
   },
   "eslintConfig": {
     "extends": [
