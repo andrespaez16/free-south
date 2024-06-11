@@ -12,9 +12,10 @@ import "swiper/css/navigation";
 import "../App.css";
 
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", href: "#", current: false },
+  { name: "Home", href: "/", current: false },
   { name: "Productos", href: "#", current: false },
   { name: "Sale o promos", href: "#", current: false },
   { name: "Nosotros", href: "#", current: false },
@@ -85,12 +86,12 @@ function Navbar() {
                       type="button"
                       className="relative rounded-full bg-[#000] p-1 text-[white] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     >
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">View notifications</span>
-                      <ShoppingCartIcon
-                        className="h-6 w-6"
-                        aria-hidden="true"
-                      />
+                      <Link to="/cart">
+                        <ShoppingCartIcon
+                          className="h-6 w-6"
+                          aria-hidden="true"
+                        />
+                      </Link>
                     </button>
                   </div>
                 </div>
