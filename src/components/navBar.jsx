@@ -10,15 +10,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../App.css";
 import { ShopContext } from "../context/ShopContext";
-import './navbar.css'
+import "./navbar.css";
 import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
-  { name: "Productos", href: "#", current: false },
-  { name: "Sale o promos", href: "#", current: false },
-  { name: "Nosotros", href: "#", current: false },
-  { name: "Contactanos", href: "#", current: false },
+  { name: "Ropa", href: "/ropa", current: false },
+  { name: "Accesorios", href: "/accesorios", current: false },
+  { name: "Calzado", href: "/calzado", current: false },
+  { name: "Sale o promos", href: "/", current: false },
+  { name: "Nosotros", href: "/", current: false },
+  { name: "Contactanos", href: "/", current: false },
 ];
 
 function classNames(...classes) {
@@ -101,10 +103,7 @@ function Navbar() {
               <Disclosure.Panel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                   {navigation.map((item) => (
-                    <Disclosure.Button
-                      key={item.name}
-                      as="a"
-                      href={item.href}
+                    <Link
                       className={classNames(
                         item.current
                           ? "bg-gray-900 text-white"
@@ -112,9 +111,10 @@ function Navbar() {
                         "block rounded-md px-3 py-2 text-base font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
+                      to={item.href}
                     >
                       {item.name}
-                    </Disclosure.Button>
+                    </Link>
                   ))}
                 </div>
               </Disclosure.Panel>

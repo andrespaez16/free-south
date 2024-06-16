@@ -92,7 +92,7 @@
 
 @media(max-width:1024px){
     .productdisplay{
-        padding: 0px 8%;
+        padding: 100px 8%;
     }
     .productdisplay-img-list{
         gap: 10px;
