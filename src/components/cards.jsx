@@ -3,6 +3,7 @@ import group from "../assets/ropa.png";
 import airport from "../assets/accesorios.png";
 import keys from "../assets/calzado.png";
 import CountUp from "react-countup";
+import { Link } from 'react-router-dom'
 import "./analytics.css";
 
 const Analytics = () => {
@@ -52,9 +53,8 @@ const Analytics = () => {
           />
           <div className="flex flex-col justify-center">
             <button className="bg-black text-[#00EA23] w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-              <a href="https://drive.google.com/drive/folders/1JOXCJ-jKr78m0_wNATmxQhE5cG3xM4NO">
-                Accesorios
-              </a>
+    
+              <Link to='/accesorios'>Accesorios</Link>
             </button>
           </div>
         </div>
@@ -73,9 +73,7 @@ const Analytics = () => {
             <p className="text-[#00df9a] font-bold "></p>
 
             <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-              <a href="https://drive.google.com/drive/folders/1HJ3Glss_Iy3egPOeSvU27wgi5XNYj0T7">
-                Ropa
-              </a>
+            <Link to='/ropa'>Ropa</Link>
             </button>
           </div>
         </div>
@@ -94,9 +92,7 @@ const Analytics = () => {
             <p className="text-[#00df9a] font-bold "></p>
 
             <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-              <a href="https://drive.google.com/drive/folders/1TxOpUw46f71f9T5hxAXBzhAdeXQQ9O60">
-                Calzado
-              </a>
+            <Link to='/calzado'>Calzado</Link>
             </button>
           </div>
         </div>
