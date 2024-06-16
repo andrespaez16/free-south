@@ -5,13 +5,12 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import logoFree from "../HomeWhite.png";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useContext, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../App.css";
-
-import { Navigation } from "swiper/modules";
+import { ShopContext } from "../context/ShopContext";
+import './navbar.css'
 import { Link } from "react-router-dom";
 
 const navigation = [
@@ -27,6 +26,7 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  const { getTotalCartItems } = useContext(ShopContext);
   return (
     <>
       <div className="w-full fixed top-0 left-0 z-[100]">
@@ -93,6 +93,7 @@ function Navbar() {
                         />
                       </Link>
                     </button>
+                    <div className="nav-cart-count">{getTotalCartItems()}</div>
                   </div>
                 </div>
               </div>
