@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 import Hero from "./hero";
 import Footer from "./footer";
@@ -8,6 +8,14 @@ import Carrusel from './carrusel';
 import Info from './info';
 import "../../src/App.css"
 function Home() {
+ const [data, setData] = useState(null)
+
+ useEffect(()=>{
+  fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+  .then((response)=> response.json())
+  .then((data)=> setData(data))
+ },[])
+
   return (
     <>
       <Hero/>
