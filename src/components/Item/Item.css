@@ -1,5 +1,7 @@
 .item{
     width: 21%;
+    cursor: pointer;
+    user-select: none;
 }
 .item img{
     width: 100%;

@@ -1,54 +1,65 @@
 import React, { createContext, useState } from "react";
-import all_product from "../assets/all_product";
 
-export const ShopContext =  createContext(null);
+export const ShopContext = createContext(null);
 
-const getDefaultCart = ()=>{
-    let cart = {};
-    for (let index = 0; index < all_product.length+1; index++) {
-        cart[index] = 0;
-    }
-    return cart;
-}
 
 const ShopContextProvider = (props) => {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    const [cartItems, setCartItems] = useState([]);
 
-    const [cartItems,setCartItems] = useState(getDefaultCart());
-    
-    
-    const addToCart = (itemId) =>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
-        console.log(cartItems);
+    const getProductsByCategory = async ({ categoryId = 1, page = 1, size = 10, search = '' }) => {
+        const queryParams = new URLSearchParams();
+        if (search && (typeof search === 'string')) {
+            queryParams.set('search', encodeURIComponent(search));
+        }
+        queryParams.set('categoryId', Number.isNaN(+categoryId) ? 1 : +categoryId);
+        queryParams.set('page', Number.isNaN(+page) ? 1 : +page);
+        queryParams.set('size', Number.isNaN(+size) ? 10 : +size);
+        const uri = `${backendUrl}/api/products?${queryParams.toString()}`;
+
+        return new Promise((resolve, reject) => {
+            fetch(new Request(uri), {
+                method: 'GET',
+                mode: 'cors',
+            })
+                .then(async (response) => resolve(await response.json()))
+                .catch((error) => reject(error));
+        })
+    }
+    const getProductDetails = async (productId) => {
+        const uri = `${backendUrl}/api/product/${+productId}`;
+        return new Promise((resolve, reject) => {
+            fetch(new Request(uri), {
+                method: 'GET',
+                mode: 'cors',
+            })
+                .then(async (response) => resolve(await response.json()))
+                .catch((error) => reject(error));
+        })
     }
 
-    const removeFromCart = (itemId) =>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-    }
-    
-    const getTotalCartAmount = () => {
-        let totalAmount = 0;
-        for (const item in cartItems) {
-          if (cartItems[item] > 0) {
-            let itemInfo = all_product.find((product) => product.id === Number(item));
-            totalAmount += cartItems[item] * itemInfo.new_price;
-          }
-        }
-        return totalAmount;
-      }
+    const getProductImageLink = (image) => `${backendUrl}/products/${image}.jpg`;
 
-      const getTotalCartItems = () =>{
-        let totalItem = 0;
-        for(const item in cartItems)
-        {
-            if(cartItems[item]>0)
-            {
-                totalItem+= cartItems[item];
-            }
-        }
-        return totalItem;
-      }
+    const addToCart = (item) => setCartItems((prev) => [...prev, item]);
 
-    const contextValue = {getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removeFromCart};
+    const removeFromCart = (productId) => setCartItems((prev) => prev.filter((p) => +p.id === +productId))
+
+    const getTotalCartAmount = () => cartItems.reduce((p, c) => (+p.price) + (+c.price), 0);
+
+    const getTotalCartItems = () => cartItems.length;
+
+    const getShoppingCart = () => cartItems;
+
+    const contextValue = {
+        getTotalCartItems,
+        getTotalCartAmount,
+        getProductsByCategory,
+        getProductDetails,
+        getProductImageLink,
+        getShoppingCart,
+        addToCart,
+        removeFromCart,
+    };
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}

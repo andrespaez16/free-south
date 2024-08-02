@@ -6,7 +6,7 @@ import escalade from "../assets/gucci5.jpg";
 import off from "../assets/prada5.jpg";
 import "./carrusel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css";
@@ -58,9 +58,9 @@ const Carrusel = () => {
         }}
       >
         {data.map((item, key) => (
-          <SwiperSlide>
+          <SwiperSlide key={key}>
             <div className="w-[250px]">
-              <img className={item.class} src={item.image} />
+              <img className={item.class} src={item.image} alt={item.image}/>
             </div>
           </SwiperSlide>
         ))}

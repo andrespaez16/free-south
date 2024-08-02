@@ -1,21 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { useParams } from 'react-router-dom';
-import Breadcrum from '../components/Breadcrums/Breadcrum';
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay';
-import DescriptionBox from '../components/DescriptionBox/DescriptionBox';
-import RelatedProducts from '../components/RelatedProducts/RelatedProducts';
 
 const Product = () => {
-  const {all_product}= useContext(ShopContext);
-  const {productId} = useParams();
-  const product = all_product.find((e)=> e.id === Number(productId));
+  const { getProductDetails } = useContext(ShopContext);
+  const [product, setProduct] = useState(null);
+  const { productId } = useParams();
+
+  const getProduct = useCallback(() => {
+    getProductDetails(productId)
+      .then(setProduct)
+      .catch(e => console.log(e));
+  }, [productId]);
+
+  useEffect(() => {
+    getProduct();
+  }, [productId])
   return (
     <div>
-      {/* <Breadcrum product={product}/> */}
-      <ProductDisplay product={product}/>
-      <DescriptionBox/>
-      <RelatedProducts/>
+      {(product && <ProductDisplay product={product} />) || <span>Loading...</span>}
     </div>
   )
 }

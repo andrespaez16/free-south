@@ -1,26 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React from "react";
 
 import Hero from "./hero";
-import Footer from "./footer";
 import Newsletter from "./Newsletter";
 import Analytics from "./cards";
 import Carrusel from "./carrusel";
 import Info from "./info";
 import "../../src/App.css";
 function Home() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch(
-      "https://api-freesouth.onrender.com/api/products?size=30&categoryId=3"
-    )
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((rejected) => {
-        console.log(rejected);
-      });
-  }, []);
-
   return (
     <>
       <Hero />

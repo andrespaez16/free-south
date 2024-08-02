@@ -1,17 +1,73 @@
-import React, { useContext } from "react";
-import "./CSS/ShopCategory.css";
-import { ShopContext } from "../context/ShopContext";
-import dropdown_icon from "../assets/dropdown_icon.png";
-import Item from "../components/Item/Item";
+import React, { useCallback, useContext, useEffect, useState } from 'react'
+import './CSS/ShopCategory.css'
+import { useParams } from 'react-router-dom';
+import { ShopContext } from '../context/ShopContext'
+import dropdown_icon from '../assets/dropdown_icon.png'
+import men_banner from '../assets/calzado.png'
+import women_banner from '../assets/ropa.png'
+import kid_banner from '../assets/accesorios.png'
+import Item from '../components/Item/Item'
 
 const ShopCategory = (props) => {
-  const { all_product } = useContext(ShopContext);
+  const { categoryId } = useParams();
+  const [page, setPage] = useState(1);
+  const [canLoad, setCanLoad] = useState(true);
+  const [productResult, setProductResult] = useState({
+    products: [],
+    total: 0,
+    count: 0,
+    totalPages: 1,
+  });
+  const { getProductsByCategory } = useContext(ShopContext);
+
+  const updateProductResult = useCallback(() => {
+    const merge = ({ products: currentProducList }, products, count, total, totalPages) => {
+      console.log('currentProducList', currentProducList);
+      return {
+        products: currentProducList.concat(products),
+        count,
+        total,
+        totalPages,
+      }
+    }
+    const setData = ({ data: { query: products, count, total, size } }) => {
+      const totalPages = (size && Math.floor(total / size)) || 1;
+      setProductResult((p) => merge(p, products, count, total, totalPages));
+      setCanLoad(page <= totalPages && count);
+    };
+    if (canLoad) {
+      getProductsByCategory({
+        categoryId,
+        page: page || 1,
+      })
+        .then(setData)
+        .catch((e) => console.log(e));
+    }
+  }, [getProductsByCategory, categoryId, page, canLoad]);
+
+  const getBanner = useCallback(() => {
+    if (+categoryId === 2) {
+      return women_banner
+    }
+    if (+categoryId === 3) {
+      return kid_banner
+    }
+
+    return men_banner;
+  }, [categoryId]);
+
+  useEffect(() => {
+    updateProductResult();
+  }, [categoryId, page]);
+
   return (
-    <div className="shop-category">
-      <img className="shopcategory-banner" src={props.banner} alt="" />
+    <div className='shop-category'>
+      <img className='shopcategory-banner' src={getBanner()} alt="" />
       <div className="shopcategory-indexSort">
         <p>
-          <span>Showing 1-12</span> out of 36 products
+          <span>
+            Showing {productResult.products.length} of {productResult.total} products (page: {page} of {productResult.totalPages})
+          </span>
         </p>
         <div className="shopcategory-sort">
           Sort by <img src={dropdown_icon} alt="" />
@@ -45,26 +101,27 @@ const ShopCategory = (props) => {
         </div>
       </div>
       <div className="shopcategory-products">
-        {all_product.map((item, i) => {
-          if (props.category === item.category) {
-            return (
-              <Item
-                key={i}
-                id={item.id}
-                name={item.name}
-                image={item.image}
-                new_price={item.new_price}
-                old_price={item.old_price}
-              />
-            );
-          } else {
-            return null;
-          }
-        })}
+        {(productResult &&
+          productResult.products.length
+          && productResult.products.map((item, index) => (
+            <Item
+              key={index}
+              id={item.id}
+              name={item.description}
+              image={item.image}
+              new_price={item.price}
+              old_price={0} />))) || <span>No hay productos disponibles</span>}
       </div>
-      <div className="shopcategory-loadmore">Explorar mas</div>
+      <div
+        onClick={() => setPage(page + 1)}
+        className={
+          canLoad
+            ? ["shopcategory-loadmore"].join(" ")
+            : ["shopcategory-loadmore", "disabled"].join(" ")}>
+        Explorar m&aacute;s
+      </div>
     </div>
-  );
-};
+  )
+}
 
 export default ShopCategory;
