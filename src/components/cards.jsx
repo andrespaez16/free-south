@@ -54,7 +54,7 @@ const Analytics = () => {
           <div className="flex flex-col justify-center">
             <button className="bg-black text-[#00EA23] w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
     
-              <Link to='/accesorios'>Accesorios</Link>
+              <Link to='/categories/1'>Accesorios</Link>
             </button>
           </div>
         </div>
@@ -73,7 +73,7 @@ const Analytics = () => {
             <p className="text-[#00df9a] font-bold "></p>
 
             <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-            <Link to='/ropa'>Ropa</Link>
+            <Link to='/categories/2'>Ropa</Link>
             </button>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Analytics = () => {
             <p className="text-[#00df9a] font-bold "></p>
 
             <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
-            <Link to='/calzado'>Calzado</Link>
+            <Link to='/categories/3'>Calzado</Link>
             </button>
           </div>
         </div>

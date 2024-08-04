@@ -20,7 +20,7 @@ function Home() {
           target="_blank"
           href="https://api.whatsapp.com/send?phone=3006406246&text=Hola deseo conocer los productos de la tienda !!!"
         >
-          what
+          whatsapp
         </a>
       </button>
     </>

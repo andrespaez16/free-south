@@ -108,7 +108,7 @@ const ShopCategory = (props) => {
               key={index}
               id={item.id}
               name={item.description}
-              image={item.image}
+              image={item.images[0]}
               new_price={item.price}
               old_price={0} />))) || <span>No hay productos disponibles</span>}
       </div>

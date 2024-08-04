@@ -26,6 +26,7 @@
 .cartitems-remove-icon {
   width: 12px;
   margin: 0px 30px;
+  text-align: center;
   cursor: pointer;
 }
 .cartitems-quantity {
@@ -34,6 +35,18 @@
   border: 2px solid #ebebeb;
   background: #fff;
 }
+.cartitems-paid {
+  padding: 2px 5px;
+  border: 2px solid #ebebeb;
+  background: #fff;
+  position: relative;
+}
+
+.cartitems-paid::before {
+  content: '$';
+  margin-right: 2px;
+}
+
 .cartitems-down {
   display: flex;
   margin: 100px 0px;
@@ -63,6 +76,12 @@
   border-radius: 20px;
   margin-top: 20px;
 }
+
+.cartitems-total button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .cartitems-promocode {
   flex: 1;
   font-size: 16px;

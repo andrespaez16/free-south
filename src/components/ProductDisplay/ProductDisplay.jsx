@@ -22,7 +22,7 @@ const ProductDisplay = (props) => {
             />))}
         </div>
         <div className="productdisplay-img">
-          <img className='productdisplay-main-img' src="http://localhost:4000/products/FT1F1DS74U140R1.jpg" alt="" />
+          <img className='productdisplay-main-img' src={getMainImage()} alt={product.name} />
         </div>
       </div>
       <div className="productdisplay-right">

@@ -2,7 +2,7 @@
     display: flex;
     padding: 0px 10%;
     gap: 10px;
-    margin-top: 100px;
+    margin: 100px 0 80px 0;
     justify-content: center;
 }
 .productdisplay-left{
@@ -15,10 +15,17 @@
     gap: 20px;
 }
 .productdisplay-img-list img{
-    height: 110px;
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    margin: 5px 0;
     cursor: pointer;
 }
 .productdisplay-main-img{
+    width: 400px;
+    object-fit: cover;
+    object-position: center;
     height: 500px;
     cursor: pointer;
 }

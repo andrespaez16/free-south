@@ -6,6 +6,8 @@ export const ShopContext = createContext(null);
 const ShopContextProvider = (props) => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
     const [cartItems, setCartItems] = useState([]);
+    const [totalCartItems, setTotalCartItems] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
 
     const getProductsByCategory = async ({ categoryId = 1, page = 1, size = 10, search = '' }) => {
         const queryParams = new URLSearchParams();
@@ -39,14 +41,50 @@ const ShopContextProvider = (props) => {
     }
 
     const getProductImageLink = (image) => `${backendUrl}/products/${image}.jpg`;
+    
+    const calculate = (items) => {
+        setTotalCartItems(items
+            .map((item) => item.quantity)
+            .reduce((p, c) => p + c, 0));
+        setTotalAmount(items
+            .map((item) => item.paid)
+            .reduce((p, c) => p + c, 0))
+    }
 
-    const addToCart = (item) => setCartItems((prev) => [...prev, item]);
+    const addToCart = (item) => {
+        const index = cartItems.findIndex((_item) => _item.id === item.id);
+        if (index === -1) {
+            let items = cartItems;
+            items.push({
+                ...item,
+                quantity: 1,
+                paid: item.price * 1
+            });
 
-    const removeFromCart = (productId) => setCartItems((prev) => prev.filter((p) => +p.id === +productId))
+            return calculate(items);
+        }
+        let items = cartItems;
+        item = items[index];
+        items[index] = {
+            ...item,
+            quantity: item.quantity + 1,
+            paid: item.price * (item.quantity + 1)
+        }
+        setCartItems(items);
 
-    const getTotalCartAmount = () => cartItems.reduce((p, c) => (+p.price) + (+c.price), 0);
+        return calculate(items);
+    };
 
-    const getTotalCartItems = () => cartItems.length;
+    const removeFromCart = (productId) => {
+        let items = cartItems.filter((p) => +p.id !== +productId);
+        setCartItems(items);
+        
+        return calculate(items);
+    }
+
+    const getTotalCartAmount = () => totalAmount;
+
+    const getTotalCartItems = () => totalCartItems;
 
     const getShoppingCart = () => cartItems;
 

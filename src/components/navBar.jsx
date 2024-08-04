@@ -5,7 +5,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import logoFree from "../HomeWhite.png";
-import React, { useContext, useRef, useState } from "react";
+import React, { useCallback, useContext, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../App.css";
@@ -29,6 +29,11 @@ function classNames(...classes) {
 
 function Navbar() {
   const { getTotalCartItems } = useContext(ShopContext);
+  const totalItems = useCallback(() => {
+    console.log("called")
+    return getTotalCartItems();
+  }, [getTotalCartItems]);
+
   return (
     <>
       <div className="w-full fixed top-0 left-0 z-[100]">
@@ -95,15 +100,16 @@ function Navbar() {
                         />
                       </Link>
                     </button>
-                    <div className="nav-cart-count">{getTotalCartItems()}</div>
+                    <div className="nav-cart-count">{totalItems()}</div>
                   </div>
                 </div>
               </div>
 
               <Disclosure.Panel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                  {navigation.map((item) => (
+                  {navigation.map((item, key) => (
                     <Link
+                      key={key}
                       className={classNames(
                         item.current
                           ? "bg-gray-900 text-white"

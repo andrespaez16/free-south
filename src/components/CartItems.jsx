@@ -1,24 +1,37 @@
-import React, { useContext } from "react";
-import "./CartItems.css";
+import React, { useContext, useEffect, useMemo } from "react";
 import { ShopContext } from "../context/ShopContext";
-import { useForm } from "react-hook-form";
+import { useForm, useFormState } from "react-hook-form";
 
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import "./CartItems.css";
 
 const CartItems = () => {
-  const { getTotalCartAmount, all_product, cartItems, removeFromCart } =
-    useContext(ShopContext);
+  const {
+    getTotalCartAmount,
+    getTotalCartItems,
+    getProductImageLink,
+    getShoppingCart,
+    removeFromCart,
+  } = useContext(ShopContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    control,
+    reset,
   } = useForm();
-  const test = 23;
+
+  const {
+    isValid,
+  } = useFormState({ control });
+
+  const cartItems = useMemo(() => getShoppingCart(), [getShoppingCart])
+
+  const onSubmit = data => console.log('form data', data);
+
   return (
     <div className="cartitems">
       <div className="cartitems-format-main">
-        <p>Products</p>
+        <p>Product</p>
         <p>Title</p>
         <p>Price</p>
         <p>Quantity</p>
@@ -26,33 +39,34 @@ const CartItems = () => {
         <p>Remove</p>
       </div>
       <hr />
-      {all_product.map((e) => {
-        if (cartItems[e.id] > 0) {
-          return (
-            <div>
-              <div className="cartitems-format cartitems-format-main">
-                <img src={e.image} alt="" className="carticon-product-icon" />
-                <p>{e.name}</p>
-                <p>${e.new_price}</p>
-                <button className="cartitems-quantity">
-                  {cartItems[e.id]}
-                </button>
-                <p>${e.new_price * cartItems[e.id]}</p>
-                <img
-                  className="cartitems-remove-icon"
-                  src={Bars3Icon}
-                  onClick={() => {
-                    removeFromCart(e.id);
-                  }}
-                  alt=""
+      {cartItems.map((item, key) => (
+        <div key={key}>
+          <div className="cartitems-format cartitems-format-main">
+            <img src={getProductImageLink(item.image)} alt={item.code} className="carticon-product-icon" />
+            <p>{item.description}</p>
+            <p>${item.price}</p>
+            <button className="cartitems-quantity">
+              {item.quantity}
+            </button>
+            <button className="cartitems-paid">
+              {item.paid}
+            </button>
+            <button
+              className="cartitems-remove-icon"
+              role="button"
+              onClick={() => removeFromCart(item.id)}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
                 />
-              </div>
-              <hr />
-            </div>
-          );
-        }
-        return null;
-      })}
+              </svg>
+            </button>
+          </div>
+          <hr />
+        </div>
+      ))}
       <div className="cartitems-down">
         <div className="cartitems-total">
           <h1>Total del carro</h1>
@@ -72,22 +86,11 @@ const CartItems = () => {
               <h3>${getTotalCartAmount()}</h3>
             </div>
           </div>
-          {/* <button>
-            <a
-              target="_blank"
-              href={`https://api.whatsapp.com/send?phone=3006406246&text=Hola como vas deseo comprar este articulo ${all_product[0].name}`}
-            >
-              Realizar la factura
-            </a>
-          </button> */}
         </div>
         <div className="cartitems-promocode">
           <p>Por favor ingresa tus datos aqui para generar la factura.</p>
           <form
-            onSubmit={handleSubmit((data) => {
-              console.log("form activado", data);
-              reset()
-            })}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <div className="cartitems-promobox">
               <input
@@ -130,7 +133,7 @@ const CartItems = () => {
             </div>
             {errors.Direccion && <span>Direccion es requerida</span>}
             <div className="cartitems-total">
-              <button disabled={false}>Realizar la factura</button>
+              <button type="submit" disabled={!(getTotalCartItems() > 0) || !isValid}>Realizar la factura</button>
             </div>
           </form>
         </div>
