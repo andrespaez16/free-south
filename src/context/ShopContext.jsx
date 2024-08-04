@@ -29,19 +29,46 @@ const ShopContextProvider = (props) => {
         })
     }
     const getProductDetails = async (productId) => {
+        if (!productId) return Promise.reject();
         const uri = `${backendUrl}/api/product/${+productId}`;
         return new Promise((resolve, reject) => {
             fetch(new Request(uri), {
                 method: 'GET',
                 mode: 'cors',
             })
-                .then(async (response) => resolve(await response.json()))
+                .then(async (response) => {
+                    if (response.ok) {
+                        return resolve(await response.json())
+                    }
+                    return reject(await response.json());
+                })
                 .catch((error) => reject(error));
-        })
+        });
     }
 
-    const getProductImageLink = (image) => `${backendUrl}/products/${image}.jpg`;
-    
+    const createOrder = async (payload) => {
+        const uri = `${backendUrl}/api/purchase`;
+        return new Promise((resolve, reject) => {
+            fetch(new Request(uri), {
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify(payload),
+                headers: {
+                    'content-type': 'application/json',
+                },
+            })
+                .then(async (response) => {
+                    if (response.ok) {
+                        return resolve(await response.json())
+                    }
+                    reject(response.body);
+                })
+                .catch((error) => reject(error));
+        });
+    };
+
+    const getProductImageLink = (image) => `${backendUrl}/products/${image || 'default'}.jpg`;
+
     const calculate = (items) => {
         setTotalCartItems(items
             .map((item) => item.quantity)
@@ -78,7 +105,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (productId) => {
         let items = cartItems.filter((p) => +p.id !== +productId);
         setCartItems(items);
-        
+
         return calculate(items);
     }
 
@@ -87,6 +114,12 @@ const ShopContextProvider = (props) => {
     const getTotalCartItems = () => totalCartItems;
 
     const getShoppingCart = () => cartItems;
+
+    const resetPurchase = () => {
+        setCartItems([]);
+        setTotalAmount(0);
+        setTotalCartItems(0);
+    }
 
     const contextValue = {
         getTotalCartItems,
@@ -97,6 +130,8 @@ const ShopContextProvider = (props) => {
         getShoppingCart,
         addToCart,
         removeFromCart,
+        createOrder,
+        resetPurchase,
     };
     return (
         <ShopContext.Provider value={contextValue}>

@@ -9,6 +9,8 @@ const Product = () => {
   const { productId } = useParams();
 
   const getProduct = useCallback(() => {
+    if (!productId) return;
+
     getProductDetails(productId)
       .then(setProduct)
       .catch(e => console.log(e));

@@ -1,16 +1,21 @@
-import React, { useContext, useEffect, useMemo } from "react";
+import React, { useContext, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { useForm, useFormState } from "react-hook-form";
 
 import "./CartItems.css";
 
 const CartItems = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const {
     getTotalCartAmount,
     getTotalCartItems,
     getProductImageLink,
     getShoppingCart,
     removeFromCart,
+    resetPurchase,
+    createOrder,
   } = useContext(ShopContext);
   const {
     register,
@@ -26,7 +31,30 @@ const CartItems = () => {
 
   const cartItems = useMemo(() => getShoppingCart(), [getShoppingCart])
 
-  const onSubmit = data => console.log('form data', data);
+  const onSubmit = data => {
+    const cart = getShoppingCart();
+    const products = cart.map((item) => ({
+      product_id: item.id,
+      count: item.quantity
+    }));
+    setLoading(true);
+
+    createOrder({
+      products,
+      user: data,
+    }).then(() => {
+      reset();
+      resetPurchase();
+      navigate('/');
+      alert('Pedido recibido, nos contactaremos para confirmar el envio.');
+    }).catch((error) => {
+      alert('No se ha podido procesar  su pedido, por favor intente nuevamente.');
+    }).finally(() => setLoading(false));
+  };
+
+  const setValueAs = value => value && typeof value === 'string'
+    ? value.trim()
+    : value;
 
   return (
     <div className="cartitems">
@@ -95,45 +123,53 @@ const CartItems = () => {
             <div className="cartitems-promobox">
               <input
                 type="text"
-                {...register("Nombre", { required: true })}
                 placeholder="Nombre"
+                {...register("name", { required: true, min: 3, setValueAs, })}
               />
             </div>
-            {errors.Nombre && <span>Nombre es requerido</span>}
+            {errors.name && <span>Nombre es requerido</span>}
             <div className="cartitems-promobox">
               <input
                 type="number"
-                {...register("Cedula", { required: true })}
                 placeholder="Cedula"
+                {...register("cc", { required: true, min: 3, setValueAs, })}
               />
             </div>
-            {errors.Cedula && <span>Cedula es requerida</span>}
+            {errors.cc && <span>Cedula es requerida</span>}
             <div className="cartitems-promobox">
               <input
                 type="tel"
-                {...register("Telefono", { required: true })}
                 placeholder="Telefeno"
+                {...register("contact", { required: true, min: 3, setValueAs, })}
               />
             </div>
-            {errors.Telefono && <span>Telefono es requerido</span>}
+            {errors.contact && <span>Telefono es requerido</span>}
             <div className="cartitems-promobox">
               <input
                 type="text"
-                {...register("Ciudad", { required: true })}
                 placeholder="Ciudad"
+                {...register("city", { required: true, min: 3, setValueAs, })}
               />
             </div>
-            {errors.Ciudad && <span>Ciudad es requerida</span>}
+            {errors.city && <span>Ciudad es requerida</span>}
             <div className="cartitems-promobox">
               <input
                 type="text"
-                {...register("Direccion", { required: true })}
                 placeholder="Direccion"
+                {...register("address", { required: true, min: 3, setValueAs, })}
               />
             </div>
-            {errors.Direccion && <span>Direccion es requerida</span>}
+            {errors.address && <span>Direccion es requerida</span>}
+            <div className="cartitems-promobox">
+              <input
+                type="email"
+                placeholder="Email"
+                {...register("email", { required: true, min: 3, setValueAs, })}
+              />
+            </div>
+            {errors.email && <span>Direccion es requerida</span>}
             <div className="cartitems-total">
-              <button type="submit" disabled={!(getTotalCartItems() > 0) || !isValid}>Realizar la factura</button>
+              <button type="submit" disabled={!(getTotalCartItems() > 0) || !isValid || loading}>Realizar la factura</button>
             </div>
           </form>
         </div>
