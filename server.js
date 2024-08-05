@@ -18,17 +18,7 @@ app.use(
  * HTTP compression data
  * */
 app.use(zlib());
-
-// Use SSL
-app.use((req, res, next) => {
-  if (req.headers["x-forwarded-proto"] !== "https") {
-    return res.redirect(["https://", req.get("Host"), req.url].join(""));
-  }
-  return next();
-});
-
 app.use(express.static(path.join(__dirname, "build")));
-
 app.get("*", function (req, res) {
   console.log(`${req.method}: ${req.url}`);
   res.sendFile(path.join(__dirname, "build/index.html"));
