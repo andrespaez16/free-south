@@ -23,6 +23,10 @@ app.use(cors({
   methods: ['GET'],
   origin: '*',
 }))
+app.use((__, res, next) => {
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  next();
+});
 app.use(express.static(path.join(__dirname, "build")));
 app.get("*", function (req, res) {
   console.log(`${req.method}: ${req.url}`);
