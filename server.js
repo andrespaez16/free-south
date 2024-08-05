@@ -1,13 +1,42 @@
-const handler = require('serve-handler');
-const http = require('http');
-const path = require('path');
+const fs = require('fs');
+const helmet = require("helmet");
+const https = require('https');
+const zlib = require("compression");
+const path = require("path");
+const express = require("express");
+const app = express();
 
-const server = http.createServer((request, response) => {
-  return handler(request, response, {
-    public: path.join(__dirname, 'build'),
-  });
+/**
+ * Helmet Security Headers
+ * */
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
+/**
+ * HTTP compression data
+ * */
+app.use(zlib());
+
+// Use SSL
+app.use((req, res, next) => {
+  if (req.headers["x-forwarded-proto"] !== "https") {
+    return res.redirect(["https://", req.get("Host"), req.url].join(""));
+  }
+  return next();
 });
 
-server.listen(process.env.PORT || 80, () => {
-  console.log('Running at http://localhost:3000');
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("*", function (req, res) {
+  console.log(`${req.method}: ${req.url}`);
+  res.sendFile(path.join(__dirname, "build/index.html"));
+});
+
+https.createServer({
+  cert: fs.readFileSync(path.join(__dirname, 'certs/cert.pem')),
+  key: fs.readFileSync(path.join(__dirname, 'certs/key.pem')),
+}, app).listen(process.env.PORT || 443, () => {
+  console.log('Freesouth web running');
 });
