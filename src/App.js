@@ -9,7 +9,6 @@ import Home from "./components/home";
 import Cart from './components/Cart';
 
 function App() {
-  console.log("backend url", process.env.REACT_APP_BACKEND_URL);
   return (
     <>
       <BrowserRouter>

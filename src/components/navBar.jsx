@@ -15,9 +15,9 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
-  { name: "Ropa", href: "/ropa", current: false },
-  { name: "Accesorios", href: "/accesorios", current: false },
-  { name: "Calzado", href: "/calzado", current: false },
+  { name: "Ropa", href: "2", current: false },
+  { name: "Accesorios", href: "1", current: false },
+  { name: "Calzado", href: "3", current: false },
   { name: "Sale o promos", href: "/", current: false },
   { name: "Nosotros", href: "/", current: false },
   { name: "Contactanos", href: "/", current: false },
@@ -30,7 +30,6 @@ function classNames(...classes) {
 function Navbar() {
   const { getTotalCartItems } = useContext(ShopContext);
   const totalItems = useCallback(() => {
-    console.log("called")
     return getTotalCartItems();
   }, [getTotalCartItems]);
 
@@ -70,21 +69,22 @@ function Navbar() {
                     </div>
                     <div className="hidden sm:ml-6 sm:block">
                       <div className="flex space-x-4 padding-top: 1rem">
-                        {navigation.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className={classNames(
-                              item.current
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                              "rounded-md px-3 py-4 text-sm font-medium"
-                            )}
-                            aria-current={item.current ? "page" : undefined}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
+                      {navigation.map((item, key) => (
+                    <Link
+                      key={key}
+                      className={classNames(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
+                      )}
+                      aria-current={item.current ? "page" : undefined}
+                      to={ `categories/${item.href}` }
+                  
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
                       </div>
                     </div>
                   </div>
@@ -117,7 +117,8 @@ function Navbar() {
                         "block rounded-md px-3 py-2 text-base font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
-                      to={item.href}
+                      to={ `categories/${item.href}` }
+                  
                     >
                       {item.name}
                     </Link>

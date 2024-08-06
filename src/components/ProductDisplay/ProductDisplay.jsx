@@ -34,17 +34,17 @@ const ProductDisplay = (props) => {
           {product.code}
         </div>
         <div className="productdisplay-right-size">
-          <h1>Select Size</h1>
+          <h1>Seleccionar Talla</h1>
           <div className="productdisplay-right-sizes">
             {product.sizes.map((p, i) => <div key={i}>{p}</div>)}
           </div>
         </div>
-        <button onClick={() => { addToCart(product) }}>ADD TO CART</button>
+        <button onClick={() => { addToCart(product) }}>Agregar</button>
         <p className='productdisplay-right-category'>
-          <span>Category: {product.category}</span>
+          <span>Categoria: {product.category}</span>
         </p>
         <p className='productdisplay-right-category'>
-          <span>Composition: {product.composition}</span>
+          <span>Material: {product.composition}</span>
         </p>
       </div>
     </div>

@@ -22,7 +22,7 @@ const ShopCategory = (props) => {
 
   const updateProductResult = useCallback(() => {
     const merge = ({ products: currentProducList }, products, count, total, totalPages) => {
-      console.log('currentProducList', currentProducList);
+
       return {
         products: currentProducList.concat(products),
         count,

@@ -5,6 +5,7 @@ import {
   FaTiktok
 } from "react-icons/fa";
 import "./hero.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,9 +21,15 @@ const Footer = () => {
           SOMOS FREE SOUTH
         </h1> */}
         <div className="flex justify-between md:w-[75%] my-6 text-[#00EA23]">
-          <FaFacebookSquare size={30} />
-          <FaInstagram size={30} />
-          <FaTiktok size={30} />
+        <Link to="https://www.facebook.com/freesouthmedellin">
+        <FaFacebookSquare size={30} />
+        </Link>
+        <Link to="https://www.instagram.com/freesouthmedellin">
+        <FaInstagram size={30} />
+        </Link>
+        <Link to="https://www.tiktok.com/@freesouthmedellin">
+        <FaTiktok size={30} />
+        </Link>
         </div>
         <p className="py-4 text-[white] ">
           POLÍTICAS Y ENVÍOS CAMBIOS, DEVOLUCIONES Y GARANTÍAS
