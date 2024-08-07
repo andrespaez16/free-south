@@ -4,9 +4,6 @@
 
 .text-white {
   background-image: url("../homemovil.jpg");
-  background-repeat: no-repeat;
-  background-size:cover; 
-  background-position: center;
 }
 
 .image-logo{
