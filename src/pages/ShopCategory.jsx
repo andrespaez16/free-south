@@ -11,6 +11,7 @@ import Item from '../components/Item/Item'
 const ShopCategory = (props) => {
   const { categoryId } = useParams();
   const [page, setPage] = useState(1);
+  const [currentCategory, setCurrentCategory] = useState(categoryId);
   const [canLoad, setCanLoad] = useState(true);
   const [productResult, setProductResult] = useState({
     products: [],
@@ -20,7 +21,7 @@ const ShopCategory = (props) => {
   });
   const { getProductsByCategory } = useContext(ShopContext);
 
-  const updateProductResult = useCallback(() => {
+  const updateProductResult = useCallback((search = '') => {
     const merge = ({ products: currentProducList }, products, count, total, totalPages) => {
 
       return {
@@ -31,19 +32,27 @@ const ShopCategory = (props) => {
       }
     }
     const setData = ({ data: { query: products, count, total, size } }) => {
-      const totalPages = (size && Math.floor(total / size)) || 1;
-      setProductResult((p) => merge(p, products, count, total, totalPages));
-      setCanLoad(page <= totalPages && count);
+      if(products.length > 0){
+        const totalPages = (size && Math.floor(total / size)) || 1;
+        setProductResult((p) => merge(p, products, count, total, totalPages));
+        setCanLoad(page <= totalPages && count);
+      }
     };
     if (canLoad) {
+      if((currentCategory !== categoryId) || (search && typeof search === 'string' && search.length) ){
+        setProductResult({...productResult,products:[]})
+        setCurrentCategory(categoryId)   
+      }
+ 
       getProductsByCategory({
         categoryId,
         page: page || 1,
+        search
       })
         .then(setData)
         .catch((e) => console.log(e));
     }
-  }, [getProductsByCategory, categoryId, page, canLoad]);
+  }, [getProductsByCategory,productResult, categoryId,currentCategory, page, canLoad]);
 
   const getBanner = useCallback(() => {
     if (+categoryId === 2) {
@@ -92,12 +101,16 @@ const ShopCategory = (props) => {
             </svg>
           </div>
 
+
           <input
             class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
             type="text"
             id="search"
+            onChange={(e)=>{updateProductResult(e.target.value)}}
             placeholder="Escribe el producto.."
           />
+
+
         </div>
       </div>
       <div className="shopcategory-products">
