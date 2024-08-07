@@ -3,9 +3,9 @@ import './CSS/ShopCategory.css'
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext'
 import dropdown_icon from '../assets/dropdown_icon.png'
-import men_banner from '../assets/calzado.png'
-import women_banner from '../assets/ropa.png'
-import kid_banner from '../assets/accesorios.png'
+import men_banner from '../assets/ropa.png'
+import women_banner from '../assets/accesorios.png'
+import kid_banner from '../assets/calzado.png'
 import Item from '../components/Item/Item'
 
 const ShopCategory = (props) => {
@@ -47,13 +47,13 @@ const ShopCategory = (props) => {
 
   const getBanner = useCallback(() => {
     if (+categoryId === 2) {
-      return women_banner
+      return men_banner
     }
     if (+categoryId === 3) {
       return kid_banner
     }
 
-    return men_banner;
+    return women_banner;
   }, [categoryId]);
 
   useEffect(() => {

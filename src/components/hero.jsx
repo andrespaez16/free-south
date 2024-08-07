@@ -6,7 +6,7 @@ import "./hero.css";
 const Hero = () => {
   return (
     <div className="" id="home">
-      <div className=" w-full h-screen mx-auto text-white bg-cover md: bg-top h-[80vh]">
+      <div className=" w-full h-screen mx-auto text-white bg-cover md: bg-top h-[72vh]">
  
       </div>
      

@@ -39,7 +39,7 @@ const Analytics = () => {
       <h1 className="md:text-2xl sm:text-3xl text-center text-2xl font-bold pb-12 text-[#00EA23]">
         NUESTROS PRODUCTOS
       </h1>
-      <div className="display flex  sm: flex-col">
+      <div className="display flex  sm: flex-col md:flex-row">
         <div
           className="max-w-[540px] mx-auto grid md:grid-col flex flex-col"
           data-aos="zoom-in"

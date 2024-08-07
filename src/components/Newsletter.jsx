@@ -5,7 +5,7 @@ const Newsletter = () => {
   return (
     <div className="pt-10" id="About">
       <div className="w-full text-white text-white-new h-[530px] text-center">
-        <div className="max-w-[1240px] mx-auto grid flex-auto lg:grid-cols-3 mt-[20px]">
+        <div className="max-w-[1240px] mx-auto grid  lg:grid-cols-3 mt-[20px] md:flex flex-col w-[30%] sm:  w-[100%]">
           <div className="lg:col-span-2">
             <p>
               {" "}
