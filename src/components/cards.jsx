@@ -52,7 +52,7 @@ const Analytics = () => {
             alt="/"
           />
           <div className="flex flex-col justify-center">
-            <button className="bg-black text-[#00EA23] w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
+            <button className="bg-black text-[#00EA23] w-[200px] rounded-full font-medium my-6 mx-auto py-3">
     
               <Link to='/categories/1'>Accesorios</Link>
             </button>
@@ -72,7 +72,7 @@ const Analytics = () => {
           <div className="flex flex-col justify-center">
             <p className="text-[#00df9a] font-bold "></p>
 
-            <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
+            <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto  py-3">
             <Link to='/categories/2'>Ropa</Link>
             </button>
           </div>
@@ -91,7 +91,7 @@ const Analytics = () => {
           <div className="flex flex-col justify-center">
             <p className="text-[#00df9a] font-bold "></p>
 
-            <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto md:mx-0 py-3">
+            <button className="bg-black text-[#00EA23]  w-[200px] rounded-full font-medium my-6 mx-auto py-3">
             <Link to='/categories/3'>Calzado</Link>
             </button>
           </div>
